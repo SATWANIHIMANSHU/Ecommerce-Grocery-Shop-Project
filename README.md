@@ -81,6 +81,34 @@ After downloading, rename the folder to **web** for deployment.
 #### Home Page ####
 ![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/7ae2595dd10bb84cb4aa97904783163029599750/Home%20Page.png)
 
+#### Product Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Product%20Page.png)
+
+#### Product Page2 ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Product%20Page%20(2).png)
+
+#### Cart Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Cart%20Page.png)
+
+#### Checkout Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Checkout%20page.png)
+
+#### Payment Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Payment%20Page.png)
+
+#### Payment Process Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Payment%20Process%20page.png)
+
+#### Payment Confirmation Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Payment%20Confirmation%20page.png)
+
+#### Customer Review Form ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Customer%20Review%20Form.png)
+
+#### Invoice ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/ba21e29e1e5b31dfe47d5663562c3e2e49866444/Invoice.jpeg)
+
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
