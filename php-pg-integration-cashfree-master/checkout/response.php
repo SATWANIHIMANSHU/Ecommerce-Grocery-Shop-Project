@@ -11,7 +11,7 @@
 	<h1 align="center">PG Response</h1>	
 
 	<?php  
- include('database/dbconnect.php'); // Database connection 
+ include('dbconnect.php'); // Database connection 
 $secretkey = ""; // add your secret key here
 $orderId = $_POST["orderId"];
 $orderAmount = $_POST["orderAmount"];
