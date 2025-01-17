@@ -78,7 +78,8 @@ After downloading, rename the folder to **web** for deployment.
 
 ## Screenshots
 
-
+#### Home Page ####
+![image alt](https://github.com/SATWANIHIMANSHU/Ecommerce-Grocery-Shop-Project/blob/7ae2595dd10bb84cb4aa97904783163029599750/Home%20Page.png)
 
 ## Contributing
 
