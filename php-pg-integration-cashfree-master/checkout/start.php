@@ -1,6 +1,6 @@
 <?php
 session_start();
- include('database/dbconnect.php'); // Database connection 
+ include('dbconnect.php'); // Database connection 
 
 $userId = $_SESSION['user_id']; // Assuming you store the user ID in the session
 
