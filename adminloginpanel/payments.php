@@ -1,0 +1,323 @@
+
+<?php
+session_start();
+include('dbconnect.php');  // Include your database connection file
+
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content='IE=edge' http-equiv=X-UA-Compatible>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MS Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="#">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.1.2/css/dataTables.dataTables.min.css">
+    <!-- Core Css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/line-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-slider.css">
+   
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            background-color: white;
+        }
+        .tableview {
+            background-color: white;
+        }
+
+        table {
+            /* height: 100%; */
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="overlay-background"></div>
+    <!-- ########## START: Setting Box ########## -->
+    <!-- <div class="theme-setting-wrapper">
+        <button type="button" id="settings-trigger" class="btn btn-primary waves-effect waves-primary">
+            <i class="la la-cog"></i>
+        </button>
+        <div class="theme-setting-sidebar">
+            <div class="h-100">
+                <div class="mt-4 d-flex align-items-center flex-wrap px-4">
+                    <h4 class="font-weight-bold">THEME CUSTOMIZER</h4>
+                    <small>Customize &amp; Preview in Real Time</small>
+                </div>
+                <hr>
+                <div class="theme-setting-sidebar-scroll">
+                    <div class="px-4">
+                        <div>
+                            <h5 class="mb-2">Dark Mode</h5>
+                            <div class="d-flex align-items-center">
+                                <div class="radio theme-radio mr-4">
+                                    <input type="radio" id="light" name="light" value="theme-light">
+                                    <label for="light">Light</label>
+                                </div>
+                                <div class="radio theme-radio mr-4">
+                                    <input type="radio" id="dark" name="light" value="theme-dark">
+                                    <label for="dark">Dark</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ########## END: Setting Box ########## -->
+
+    <!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-sideleft">
+        <a id="remove-menu" class="la la-close d-xl-none"></a>
+        <div class="br-logo d-flex justify-content-center align-items-center">
+            <a href="index.php"><img src="assets/image/logo.png" alt="MS Admin Panel" width="80" /></a>
+        </div>
+        <ul class="custom-scroll">
+            <li ><a href="main.php" class="waves-effect waves-primary"><i
+                        class="la la-dashboard"></i>Dashboard</a></li>
+                        <li><a href="insert.php" class="waves-effect waves-primary"><i
+                        class="la la-cart-arrow-down"></i>Insert</a></li>
+                        <li ><a href="showdata.php" class="waves-effect waves-primary"><i class="la la-edit"></i>Edit Product</a></li>
+                        <li ><a href="Delete.php" class="waves-effect waves-primary"><i class="la la-trash"></i></i>Delete Product</a></li>
+                        <li ><a href="Showuser.php" class="waves-effect waves-primary"><i class="la la-user"></i>Users</a></li>
+                        <li><a href="orders.php" class="waves-effect waves-primary"><i class="la la-check-circle"></i>Orders</a></li>
+                        <li class="active">
+                            <a href="payments.php" class="waves-effect waves-primary payment-link">
+                                <img src="uploads/payment-method.png" height="60px" width="60px"><br>Payments
+                            </a>
+                        </li>
+                        
+                        <li><a href="Feedbackform.php" class="waves-effect waves-primary"><i class="la la-comment"></i>Feedbacks</a></li> 
+                        
+                        
+            <!-- <li><a href="insert.php" class="waves-effect waves-primary"><i class="la la-clone"></i>Elements</a></li> -->
+            <!-- <li><a href="javascript:;" class="waves-effect waves-primary"><i
+                        class="la la-bullhorn"></i>Campaign</a></li> -->
+            <!-- <li class="dropdown-sub-menu">
+                <a href="javascript:;" class="waves-effect waves-primary"><i
+                            class="la la-users"></i>Customers</a> -->
+                <!-- <ul class="sub-menu">
+                        <li><a href="javascript:;"><i class="la la-users"></i>New Customers</a></li>
+                        <li><a href="javascript:;"><i class="la la-users"></i>Old Customers</a></li>
+                    </ul> 
+            </li>-->
+            <!-- 
+                            <li><a href="javascript:;" class="waves-effect waves-primary"><i
+                            class="la la-cart-arrow-down"></i>Orders</a></li>
+            <li><a href="javascript:;" class="waves-effect waves-primary"><i
+                            class="la la-wechat"></i>Messages</a></li>
+            <li><a href="javascript:;" class="waves-effect waves-primary"><i class="la la-bank"></i>Payments</a>
+            </li>
+            <li><a href="javascript:;" class="waves-effect waves-primary"><i class="la la-image"></i>Media
+                        Manager</a></li>
+            <li><a href="javascript:;" class="waves-effect waves-primary"><i class="la la-cog"></i>Settings</a>
+            </li> -->
+        </ul>
+    </div>
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <header class="header fixed-top d-flex align-items-center">
+        <!-- ########## START: HEAD PANEL ########## -->
+        <div class="br-header d-flex w-100">
+            <a id="add-menu" class="la la-navicon d-flex d-xl-none align-items-center justify-content-center"></a>
+            <div class="br-header-left">
+                <a href="javascript:;" class="searchbar-toggle la la-search d-flex d-md-none"></a>
+                <form class="searchbar d-flex align-items-center pl-3">
+                    <i class="la la-search"></i>
+                    <input class="form-control border-0 pl-2" type="search" placeholder="Search...">
+                </form>
+            </div>
+            <!-- br-header-left -->
+            <div class="br-header-right ml-auto">
+                <nav class="nav">
+                    
+                    <!-- dropdown -->
+                    
+                    <!-- dropdown -->
+                    <div class="dropdown">
+                        <a href="" class="nav-link-profile d-flex dropdown-toggle" data-toggle="dropdown"
+                            id="dropdownprofile">
+                            
+                            <i class="la la-user"></i>
+                            <!-- <img src="assets/image/img3.jpg" class="rounded" alt="" width="50"> -->
+                            <span class="logged-name px-3">Himanshu Satwani <br><small class="pt-3">Admin</small></span>
+                            <i class="profile-dropdown la la-caret-square-o-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-header dropdown-menu-user"
+                            aria-labelledby="dropdownprofile">
+                            <div class="text-center">
+                                <a href=""></a>
+                                <h6 class="logged-fullname font-weight-bold mt-2">Himanshu Satwani</h6>
+                                <p class="my-0">himanshu89@gmail.com</p>
+                            </div>
+                            <hr>
+                            <div class="main">
+                                <form action="logoutbtn.php" method="POST">
+                                    <button type="submit" name="logout_btn" class="btn btn-danger w-100">Logout</button>
+                                </form>
+
+                               
+                            </div>
+                            <!-- <ul class="list-unstyled user-profile-nav">
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i class="la la-user"></i>
+                                            Edit Profile</a></li>
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i class="la la-cog"></i>
+                                            Settings</a></li>
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i
+                                                class="la la-download"></i> Downloads</a></li>
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i
+                                                class="la la-star-o"></i> Favorites</a></li>
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i class="la la-file"></i>
+                                            Collections</a></li>
+                                <li><a href="javascript:;" class=" waves-effect waves-light"><i
+                                                class="la la-power-off"></i> Sign Out</a></li>
+                            </ul> -->
+                        </div>
+                        <!-- dropdown-menu -->
+                    </div>
+                    <!-- dropdown -->
+                </nav>
+            </div>
+            <!-- br-header-right -->
+        </div>
+        <!-- br-header -->
+        <!-- ########## END: HEAD PANEL ########## -->
+    </header>
+    <!-- ########## START: MAIN PANEL ########## -->
+
+
+    <section class="mainpanel">
+    <div class="row ">
+                <div class="card ">
+                    <div class="card  border-0">
+                        <div class="card-header py-4">
+                            <h5 class="text-secondary font-weight-bold mb-0"> Payments </h5>
+                        </div>
+                        <div class="card-body">
+                                <table id="datatable1" class="table table-striped table-borderless w-100">
+                                <thead class="table-theme-bg">
+                                    <tr>
+                                        <th>Id</th> 
+                                        <th>Order Id</th>
+                                        <th>Order_Amount</th>
+                                        <th>Payment Id</th>
+                                        <th>Transaction Status</th>
+                                        <th>Payment Mode</th>
+                                        <th>Transaction Time</th>
+                                        <!-- <th class="text-center no-sorting">Action</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php
+                                include('dbconnect.php'); 
+                                $sql = "SELECT * FROM `payment`";
+                                $result = $conn->query($sql);
+                                while($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($row['id']) ?></td>
+                        <td><?= htmlspecialchars($row['order_id']) ?></td>
+                        <td><?= htmlspecialchars($row['order_amount']) ?></td>
+                        <td><?= htmlspecialchars($row['reference_id']) ?></td>
+                        <td><?= htmlspecialchars($row['transaction_status']) ?></td>
+                        <td><?= htmlspecialchars($row['payment_mode']) ?></td>
+                        <td><?= htmlspecialchars($row['transaction_time']) ?></td>
+                       
+                        <!-- <td align="center">
+                                            <div class="dropdown">
+                                                <a class="la la-ellipsis-h dropdown-toggle" id="dropdownMenuButton11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton11">
+                                                    <a class="dropdown-item" href="#"><i
+															class="la la-info-circle"></i>View Details</a>
+                                                     <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#"><i
+															class="la la-paperclip"></i>View Details</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-cog"></i>View
+														Details</a>
+                                                    <a class="dropdown-item" href="#"><i
+															class="la la-cloud-download"></i>View Details</a>
+                                                </div> 
+                                            </div>
+                        </td> -->
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                                </div>
+
+
+</section>
+
+
+
+</body>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="assets/scripts/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script> -->
+<script src="assets/scripts/popper.min.js"></script>
+<script src="assets/scripts/bootstrap-slider.min.js"></script>
+<script src="assets/scripts/bootstrap.min.js"></script>
+<script src="assets/scripts/bootstrap.bundle.min.js"></script>
+<script src="assets/scripts/bootstrap-select.min.js"></script>
+<script src="assets/scripts/bootstrap-tooltip-custom-class.js"></script>
+<script src="assets/scripts/jquery.mCustomScrollbar.js"></script>
+<script src="assets/scripts/datatables.min.js"></script>
+<script src="assets/scripts/ripple.min.js"></script>
+<script src="assets/scripts/custome.js"></script>
+
+
+    
+
+        
+</html>

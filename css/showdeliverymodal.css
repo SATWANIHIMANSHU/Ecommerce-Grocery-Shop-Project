@@ -1,0 +1,53 @@
+/* .showdeliverymodal {
+    list-style: none;
+    display: flex;
+    background-color: #007bff;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .showdeliverymodal, .showdeliverymodal-li {
+    margin-right: 20px;
+  }
+
+  .showdeliverymodal, .showdeliverymodal-li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  } */
+
+  #pincodeModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #pincodeModal div {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  #pincodeModal input {
+    padding: 10px;
+    margin-top: 10px;
+    width: 200px;
+    font-size: 16px;
+  }
+
+  #pincodeModal button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
